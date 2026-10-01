@@ -109,3 +109,23 @@ Content-Type: application/json
 ### 15. Доменная ошибка: удаление несуществующей задачи по ID
 # Ожидаемый ответ: 404 Not Found
 DELETE http://localhost:8080/api/tasks/999
+
+### 16. HttpRequestMethodNotSupportedException (405 Method Not Allowed)
+# Вызов несуществующего HTTP-метода для эндпоинта (например, POST вместо GET для статистики)
+POST http://localhost:8080/api/tasks/statistics
+
+### 17. HttpMediaTypeNotSupportedException (415 Unsupported Media Type)
+# Передача неверного заголовка Content-Type (text/plain вместо application/json)
+POST http://localhost:8080/api/tasks
+Content-Type: text/plain
+
+{
+  "title": "Задача",
+  "taskPriority": "HIGH"
+}
+
+### 18. Неверый статус
+GET http://localhost:8080/api/tasks?status=FINISHED
+
+### 19. Неерный параметр
+GET http://localhost:8080/api/tasks/abc
