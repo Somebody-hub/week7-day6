@@ -103,7 +103,7 @@ POST http://localhost:8080/api/tasks/1/tags
 Content-Type: application/json
 
 {
-  "tag": "backend"
+  "tag": "Backend"
 }
 
 ### 15. Доменная ошибка: удаление несуществующей задачи по ID

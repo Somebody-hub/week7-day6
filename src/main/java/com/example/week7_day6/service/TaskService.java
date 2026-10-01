@@ -74,7 +74,7 @@ public class TaskService {
 
     public TaskResponse addTag(Integer id, String tag) {
         Task task = taskRepository.findById(id).orElseThrow(() -> new TaskNotFoundException(id));
-        if (task.getTags().contains(tag)) {
+        if (task.getTags().contains(tag.trim().toLowerCase())) {
             throw new TagAlreadyExistsException(tag);
         }
         task.addTag(tag);
