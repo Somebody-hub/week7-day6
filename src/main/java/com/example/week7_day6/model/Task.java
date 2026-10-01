@@ -67,11 +67,11 @@ public class Task {
         this.taskPriority = taskPriority;
     }
 
-    public void setTaskStatus(TaskStatus taskStatus) {
-        if (taskStatus == null) {
+    public void setTaskStatus(TaskStatus status) {
+        if (status == null) {
             throw new IllegalArgumentException("Task status cannot be null");
         }
-        this.taskStatus = taskStatus;
+        this.taskStatus = status;
     }
 
     public void addTag(String tag) {

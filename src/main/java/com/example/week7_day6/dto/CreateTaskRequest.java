@@ -14,4 +14,4 @@ public record CreateTaskRequest(
         String description,
 
         @NotNull(message = "Priority is required")
-        TaskPriority taskPriority) {}
+        TaskPriority priority) {}

@@ -6,7 +6,7 @@ Content-Type: application/json
 {
   "title": "Изучить REST API в Spring Boot",
   "description": "Завершить мини-проект 7-й недели",
-  "taskPriority": "HIGH"
+  "priority": "HIGH"
 }
 
 ### 2. Создание второй задачи
@@ -17,7 +17,7 @@ Content-Type: application/json
 {
   "title": "Подготовить отчет",
   "description": "Сделать скриншоты тестов",
-  "taskPriority": "MEDIUM"
+  "priority": "MEDIUM"
 }
 
 ### 3. Получение всех задач
@@ -80,7 +80,7 @@ Content-Type: application/json
 {
   "title": "",
   "description": "Описание задачи",
-  "taskPriority": "HIGH"
+  "priority": "HIGH"
 }
 
 ### 12. Ошибка валидации: отсутствует обязательный priority
@@ -129,3 +129,12 @@ GET http://localhost:8080/api/tasks?status=FINISHED
 
 ### 19. Неерный параметр
 GET http://localhost:8080/api/tasks/abc
+
+### 6. Обновление статуса первой задачи
+# Ожидаемый ответ: 200 OK (статус IN_PROGRESS)
+PATCH http://localhost:8080/api/tasks/1/status
+Content-Type: application/json
+
+{
+  "status": "IN_PROGRESS"
+}

@@ -48,7 +48,7 @@ public class TaskService {
         Task newTask = taskRepository.save(
                 request.title(),
                 request.description(),
-                request.taskPriority()
+                request.priority()
         );
         return toResponse(newTask);
     }
